@@ -19,7 +19,7 @@ namespace files {
      * @param value_array the array of values to write to the file
      */
     //% weight=86
-    //% blockId=fs_append_numberss block="filesystem|append numbers %values"
+    //% blockId=fs_append_numbers block="file %filename|append numbers %values"
     export function writeNumbers(filename: string, values: number[]): void {
         if (!values) return;
         let line = ""
