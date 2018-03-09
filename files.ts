@@ -13,6 +13,22 @@ namespace files {
     export function appendNumber(filename: string, value: number) {
         files.appendString(filename, value.toString());
     }
+    /**
+     * Stores an array of numbers to a file as CSV
+     * @param filename file name, eg: "output.txt"
+     * @param value_array the array of values to write to the file
+     */
+    //% weight=86
+    //% blockId=fs_append_numberss block="filesystem|append numbers %values"
+    export function writeNumbers(filename: string, values: number[]): void {
+        if (!values) return;
+        let line = ""
+        for (let i = 0; i < values.length; ++i) {
+            if (i > 0) line += ",";
+            line += values[i].toString();
+        }
+        files.appendLine(filename, line)
+     }
 
     /**
      * Opens a new file
